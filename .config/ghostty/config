@@ -49,7 +49,9 @@
 # resize-overlay-duration = 4s 200ms
 
 window-decoration = false
-theme=catppuccin-mocha
+theme = catppuccin-mocha
+
+clipboard-paste-protection = false
 
 keybind = ctrl+1=text:\x1bOP
 keybind = ctrl+2=text:\x1bOQ

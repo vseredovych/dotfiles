@@ -222,6 +222,12 @@ exec --no-startup-id xset r rate 250 30
 
 exec --no-startup-id xinput set-prop 18 "libinput Natural Scrolling Enabled" 1
 
+# Disable FCKN' CUPS lock!
+exec --no-startup-id setxkbmap -option caps:none
+
+# Keyboard layout change
+bindsym Control+space exec --no-startup-id "setxkbmap -query | grep -q 'layout:\s*us' && setxkbmap ru || setxkbmap us"
+
 # TODO: Take a look
 # bindsym $mod+Shift+s exec --no-startup-id ~/dotfiles/bin/monitor
 # bindsym $mod+Shift+n exec --no-startup-id ~/dotfiles/bin/resolution
