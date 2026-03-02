@@ -39,7 +39,7 @@ collect.sh            # Copy ~/  → configs/ (pull in live edits)
 
 **Install dotfile dependencies** (tools the configs depend on, not Hyprland itself):
 ```bash
-./scripts/install-deps.sh
+./scripts/install-dependencies.sh
 ```
 
 **Apply configs to the system:**

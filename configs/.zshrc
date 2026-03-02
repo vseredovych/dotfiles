@@ -94,17 +94,8 @@ iv() {
 # ── Shell integrations ────────────────────────────────────────────────────────
 eval "$(fzf --zsh)"
 
-# z — frecency-based directory jumping, with fzf picker
-source ~/zsh/z.sh
-unalias z 2>/dev/null
-z() {
-  local dir=$(
-    _z 2>&1 |
-    fzf --height 40% --layout reverse --info inline \
-        --nth 2.. --tac --no-sort --query "$*" \
-        --bind 'enter:become:echo {2..}'
-  ) && cd "$dir"
-}
+# z — frecency-based directory jumping
+eval "$(zoxide init zsh)"
 
 # ── Python ────────────────────────────────────────────────────────────────────
 export PYTHONDONTWRITEBYTECODE=1
