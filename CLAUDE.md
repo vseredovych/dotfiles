@@ -21,6 +21,11 @@ Personal dotfiles for an Arch Linux system. All configs live under `configs/` (m
 | Tmux | `configs/.tmux.conf` |
 | Ghostty | `configs/.config/ghostty/config` |
 | oh-my-posh | `configs/.config/ohmyposh/` |
+| Hyprland WM | `configs/.config/hypr/hyprland.conf` |
+| Hyprlock | `configs/.config/hypr/hyprlock.conf` |
+| Hyprpaper | `configs/.config/hypr/hyprpaper.conf` |
+| Rofi | `configs/.config/rofi/` |
+| Waybar | `configs/.config/waybar/` |
 | Tmux session script | `scripts/tmux-start.sh` |
 
 ## Architecture
