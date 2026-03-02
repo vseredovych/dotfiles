@@ -20,10 +20,7 @@ Personal dotfiles for an Arch Linux system. All configs live under `configs/` (m
 | Zsh | `configs/.zshrc` |
 | Tmux | `configs/.tmux.conf` |
 | Ghostty | `configs/.config/ghostty/config` |
-| i3 | `configs/.config/i3/config` |
 | oh-my-posh | `configs/.config/ohmyposh/` |
-| Firefox CSS | `configs/.firefox/chrome/userChrome.css` |
-| VS Code | `configs/.vscode/` |
 | Tmux session script | `scripts/tmux-start.sh` |
 
 ## Architecture
@@ -32,8 +29,6 @@ Personal dotfiles for an Arch Linux system. All configs live under `configs/` (m
 - **Prompt**: oh-my-posh (catppuccin-mocha theme from `configs/.config/ohmyposh/`)
 - **Terminal**: Ghostty (primary), Alacritty (secondary)
 - **Multiplexer**: Tmux with `Ctrl+a` prefix, vi-mode copy, F1-F9 window switching
-- **WM**: i3 with hjkl navigation, dual-monitor layout (HDMI-1-0 primary, eDP-1 secondary)
-- **Editor**: VS Code (settings and keybindings in `configs/.vscode/`)
 
 ## Package Management
 

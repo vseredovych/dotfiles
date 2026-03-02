@@ -16,9 +16,5 @@ collect() {
 collect .zshrc
 collect .tmux.conf
 collect .config/ghostty
-collect .config/i3
-collect .config/i3status
 collect .config/ohmyposh
-collect .vscode
-collect .firefox
 echo "Done. Review with: git diff configs/"
