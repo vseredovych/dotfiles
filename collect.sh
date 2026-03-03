@@ -5,9 +5,12 @@ DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 
 collect() {
     local src="$HOME/$1" dst="$DOTFILES/configs/$1"
-    if [[ -e "$src" ]]; then
+    if [[ -d "$src" ]]; then
+        mkdir -p "$dst"
+        cp -rv "$src/." "$dst/"
+    elif [[ -f "$src" ]]; then
         mkdir -p "$(dirname "$dst")"
-        cp -rv "$src" "$dst"
+        cp -v "$src" "$dst"
     else
         echo "SKIP (not found): $src"
     fi
