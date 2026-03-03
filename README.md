@@ -53,6 +53,20 @@ collect.sh            # Copy ~/  → configs/ (pull in live edits)
 git diff configs/
 ```
 
+## Branches
+
+| Branch  | Purpose |
+|---------|---------|
+| `main`  | Arch Linux (primary) |
+| `macos` | macOS — shared configs adapted, no desktop WM layer |
+
+To sync a shared config change to macOS:
+```bash
+git checkout macos
+git checkout main -- configs/.zshrc   # or whichever file changed
+# adjust macOS-specific lines if needed, then commit
+```
+
 ## Arch Setup
 
 Package installation and system setup instructions: [docs/arch-setup.md](docs/arch-setup.md).
