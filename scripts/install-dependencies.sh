@@ -10,6 +10,7 @@ PACMAN_PKGS=(
     tmux            # terminal multiplexer
     neovim          # editor (aliased as vim)
     fzf             # fuzzy finder (zsh integration + fzf-tab)
+    zoxide          # frecency-based directory jumping (z command)
     wl-clipboard    # wl-copy / wl-paste (clipboard aliases, tmux copy-pipe)
     brightnessctl   # screen brightness keys
     playerctl       # media keys (play/pause/next/prev)
@@ -36,9 +37,5 @@ echo ""
 echo "==> Manual steps:"
 echo ""
 echo "  zinit — installs itself on first zsh launch (no action needed)"
-echo ""
-echo "  z.sh — frecency-based directory jumping, sourced from ~/zsh/z.sh"
-echo "    mkdir -p ~/zsh"
-echo "    curl -o ~/zsh/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh"
 echo ""
 echo "Done. Start a new zsh session to finish setup."
