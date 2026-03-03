@@ -14,11 +14,7 @@ collect() {
 }
 
 collect .zshrc
-collect .zprofile
 collect .tmux.conf
 collect .config/ghostty
 collect .config/ohmyposh
-collect .config/hypr
-collect .config/rofi
-collect .config/waybar
 echo "Done. Review with: git diff configs/"

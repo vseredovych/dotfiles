@@ -81,9 +81,15 @@ alias d='pwd'
 alias vim='nvim'
 alias pvim='poetry run nvim .'
 
-alias c='wl-copy'
-alias cc='wl-copy'
-alias v='wl-paste'
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    alias c='pbcopy'
+    alias cc='pbcopy'
+    alias v='pbpaste'
+else
+    alias c='wl-copy'
+    alias cc='wl-copy'
+    alias v='wl-paste'
+fi
 
 # ── Functions ─────────────────────────────────────────────────────────────────
 # View image inline (requires kitty)
