@@ -5,7 +5,7 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$UID}"
 export XDG_DOWNLOAD_DIR="${XDG_DOWNLOAD_DIR:-$HOME/Downloads}"
 
-export PATH=$PATH:/home/vs/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 
 export ALTERNATE_EDITOR=vim
 export EDITOR=vim
@@ -57,7 +57,7 @@ zstyle ':completion:*' menu no
 # zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # ── Prompt ────────────────────────────────────────────────────────────────────
-eval "$(oh-my-posh init zsh --config /home/vs/.config/ohmyposh/ohmyposh-catpucin-mocha.omp.json)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/ohmyposh-catpucin-mocha.omp.json)"
 
 # ── History ───────────────────────────────────────────────────────────────────
 HISTSIZE=20000
