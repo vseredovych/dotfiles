@@ -22,6 +22,8 @@ git checkout main -- configs/.zshrc   # or whichever file changed
 # adjust macOS-specific lines if needed, then commit
 ```
 
+> **IMPORTANT**: After any commit on `main` that touches a shared config (zshrc, tmux.conf, ghostty, collect.sh, etc.), always update `macos` too. Cherry-pick the relevant commits or apply the changes manually — do not leave the branches out of sync.
+
 ## Conventions
 
 - **Clipboard**: Arch/Wayland uses `wl-copy`/`wl-paste`; macOS branch uses `pbcopy`/`pbpaste` directly (no runtime conditionals — the branches diverge).
