@@ -274,7 +274,23 @@ bash scripts/install-dependencies.sh   # install dotfile tool dependencies
 
 ---
 
-## 12. Backup and Restore (Timeshift + BTRFS)
+## 12. Neovim Configuration
+
+Neovim config lives in a separate repo and must be cloned into `~/.config/nvim/`.
+Requires `neovim` and `ripgrep` (both installed in §10).
+
+```bash
+git clone https://github.com/vseredovych/init.lua ~/.config/nvim
+```
+
+On first launch, `lazy.nvim` bootstraps itself and installs all plugins automatically:
+```bash
+nvim
+```
+
+---
+
+## 13. Backup and Restore (Timeshift + BTRFS)
 
 This system uses **Timeshift** to snapshot the BTRFS `@` subvolume. Snapshots are stored in `/.snapshots` (the `@snapshots` subvolume).
 
@@ -340,7 +356,7 @@ This lets you verify the snapshot works before committing to a restore.
 
 ---
 
-## 13. Post-Installation Checklist
+## 14. Post-Installation Checklist
 
 - [ ] Reboot and verify Hyprland starts
 - [ ] Audio working: `wpctl status`
@@ -348,5 +364,6 @@ This lets you verify the snapshot works before committing to a restore.
 - [ ] Docker: `docker run hello-world`
 - [ ] VPN: test openconnect-sso
 - [ ] Dotfiles deployed: `./deploy.sh`
+- [ ] Neovim config cloned: `~/.config/nvim` exists, plugins installed on first `nvim` launch
 - [ ] Timeshift configured with BTRFS and automatic schedule
 - [ ] `sudo pacman -Sc && yay -Sc` to clear package cache
