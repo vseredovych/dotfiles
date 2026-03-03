@@ -164,6 +164,10 @@ pacman -S hyprland hyprlock hyprpaper waybar rofi wl-clipboard \
           ghostty dolphin wlogout
 ```
 
+**Rofi theme** — the launcher config uses themes from [adi1090x/rofi](https://github.com/adi1090x/rofi).
+Only `launchers/type-4/style-5` (onedark colors) is kept in this repo.
+To restore the full theme collection: `git clone https://github.com/adi1090x/rofi ~/.config/rofi`.
+
 **Autologin + auto-launch Hyprland** (no display manager):
 
 Step 1 — configure getty to autologin on TTY1:
