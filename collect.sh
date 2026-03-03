@@ -14,6 +14,7 @@ collect() {
 }
 
 collect .zshrc
+collect .zprofile
 collect .tmux.conf
 collect .config/ghostty
 collect .config/ohmyposh

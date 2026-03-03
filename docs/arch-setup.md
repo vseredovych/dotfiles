@@ -164,15 +164,21 @@ pacman -S hyprland hyprlock hyprpaper waybar rofi wl-clipboard \
           ghostty dolphin wlogout
 ```
 
-**Enable Hyprland to start on login** (no display manager — launch from zsh):
+**Autologin + auto-launch Hyprland** (no display manager):
+
+Step 1 — configure getty to autologin on TTY1:
 ```bash
-# Add to ~/.zprofile:
-if uwsm check may-start; then
-    exec uwsm start hyprland.desktop
-fi
+sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf <<EOF
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty --autologin vs --noclear %I \$TERM
+EOF
+sudo systemctl daemon-reload
 ```
 
-Or simply launch with `Hyprland` from a TTY login if not using a session manager.
+Step 2 — `~/.zprofile` launches Hyprland when logging into TTY1
+(tracked in the dotfiles repo as `configs/.zprofile`, deployed by `./deploy.sh`).
 
 ---
 

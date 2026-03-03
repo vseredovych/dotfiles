@@ -18,6 +18,7 @@ Personal dotfiles for an Arch Linux system. All configs live under `configs/` (m
 | Config | Path in repo |
 |--------|-------------|
 | Zsh | `configs/.zshrc` |
+| Zsh profile (Hyprland autostart) | `configs/.zprofile` |
 | Tmux | `configs/.tmux.conf` |
 | Ghostty | `configs/.config/ghostty/config` |
 | oh-my-posh | `configs/.config/ohmyposh/` |
