@@ -7,11 +7,13 @@ window-decoration = false
 # pure black (overrides theme background)
 background = 000000
 # 75% transparency
-background-opacity = 0.75
+background-opacity = 0.95
 background-blur = false
 # disabled: using custom black background instead
 # theme = catppuccin-mocha
 # theme = rose-pine-moon
+
+term = xterm-256color
 
 # ── Behavior ──────────────────────────────────────────────────────────────────
 # allow pasting without confirmation prompt
