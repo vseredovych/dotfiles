@@ -2,16 +2,22 @@
 # Reference: ghostty +show-config --default --docs
 
 # ── Appearance ────────────────────────────────────────────────────────────────
-window-decoration = false          # no window chrome / title bar
-background = 000000                # pure black (overrides theme background)
-background-opacity = 0.75          # 75% transparency
+# no window chrome / title bar
+window-decoration = false
+# pure black (overrides theme background)
+background = 000000
+# 75% transparency
+background-opacity = 0.75
 background-blur = false
-# theme = catppuccin-mocha         # disabled: using custom black background instead
-# theme = rose-pine-moon           # alternative tried previously
+# disabled: using custom black background instead
+# theme = catppuccin-mocha
+# theme = rose-pine-moon
 
 # ── Behavior ──────────────────────────────────────────────────────────────────
-clipboard-paste-protection = false  # allow pasting without confirmation prompt
-confirm-close-surface = false       # no confirmation when closing a pane/tab
+# allow pasting without confirmation prompt
+clipboard-paste-protection = false
+# no confirmation when closing a pane/tab
+confirm-close-surface = false
 
 # ── Keybindings ───────────────────────────────────────────────────────────────
 # Disable Ctrl+Enter fullscreen (conflicts with tmux/editor workflows)
