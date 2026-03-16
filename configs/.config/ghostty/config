@@ -15,6 +15,9 @@ background-blur = false
 
 term = xterm-256color
 
+# Treat Option as Alt so Alt+F / Alt+B word-jumping works in the shell
+macos-option-as-alt = true
+
 # ── Behavior ──────────────────────────────────────────────────────────────────
 # allow pasting without confirmation prompt
 clipboard-paste-protection = false
@@ -24,6 +27,7 @@ confirm-close-surface = false
 # ── Keybindings ───────────────────────────────────────────────────────────────
 # Disable Ctrl+Enter fullscreen (conflicts with tmux/editor workflows)
 keybind = ctrl+enter=unbind
+
 
 # Remap Option+1–6 → F1–F6 escape sequences for tmux window switching.
 keybind = alt+1=text:\x1bOP
