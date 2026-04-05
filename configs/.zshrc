@@ -94,6 +94,21 @@ iv() {
 # ── Shell integrations ────────────────────────────────────────────────────────
 eval "$(fzf --zsh)"
 
+# ── Keybinding overrides (after fzf to take precedence) ───────────────────────
+# Ctrl+F: sessionizer if buffer empty, else accept autosuggestion
+_ctrl_f() {
+  if [[ -z $BUFFER ]]; then
+    tmux-sessionizer
+    zle reset-prompt
+  else
+    zle autosuggest-accept
+  fi
+}
+zle -N _ctrl_f
+bindkey '^f' _ctrl_f
+
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'ctrl-y:accept'"
+
 # z — frecency-based directory jumping
 eval "$(zoxide init zsh)"
 
