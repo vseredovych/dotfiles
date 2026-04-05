@@ -112,6 +112,15 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'ctrl-y:accept'"
 # z — frecency-based directory jumping
 eval "$(zoxide init zsh)"
 
+# z with no args opens interactive fzf picker; z <query> jumps directly
+z() {
+  if [[ $# -eq 0 ]]; then
+    __zoxide_zi
+  else
+    __zoxide_z "$@"
+  fi
+}
+
 # ── Python ────────────────────────────────────────────────────────────────────
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONIOENCODING=UTF-8
