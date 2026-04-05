@@ -98,8 +98,8 @@ eval "$(fzf --zsh)"
 # Ctrl+F: sessionizer if buffer empty, else accept autosuggestion
 _ctrl_f() {
   if [[ -z $BUFFER ]]; then
-    tmux-sessionizer
-    zle reset-prompt
+    BUFFER="tmux-sessionizer"
+    zle accept-line
   else
     zle autosuggest-accept
   fi
