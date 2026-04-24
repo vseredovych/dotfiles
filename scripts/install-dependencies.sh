@@ -13,6 +13,8 @@ APT_PKGS=(
     zoxide          # frecency-based directory jumping (z command)
     xclip           # clipboard (c/v aliases, tmux copy-pipe)
     git             # required for zinit auto-install
+    pyenv           # Python version manager (installs to /usr/bin, picked up by .zshrc)
+    curl            # used below for oh-my-posh
 )
 
 echo "==> Installing apt packages..."
@@ -22,10 +24,6 @@ sudo apt-get install -y "${APT_PKGS[@]}"
 echo ""
 echo "==> Installing oh-my-posh..."
 curl -s https://ohmyposh.dev/install.sh | bash -s
-
-echo ""
-echo "==> Installing pyenv..."
-curl https://pyenv.run | bash
 
 echo ""
 echo "==> Installing ghostty..."
