@@ -8,7 +8,8 @@ set -e
 APT_PKGS=(
     zsh             # shell
     tmux            # terminal multiplexer
-    neovim          # editor (aliased as vim)
+    # neovim: NOT installed via apt — apt version is too old (< 0.11).
+    #          Install manually: sudo snap install nvim --classic
     fzf             # fuzzy finder (zsh integration + fzf-tab)
     zoxide          # frecency-based directory jumping (z command)
     xclip           # clipboard (c/v aliases, tmux copy-pipe)
