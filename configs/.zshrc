@@ -81,9 +81,9 @@ alias d='pwd'
 alias vim='nvim'
 alias pvim='poetry run nvim .'
 
-alias c='wl-copy'
-alias cc='wl-copy'
-alias v='wl-paste'
+alias c='xclip -selection clipboard'
+alias cc='xclip -selection clipboard'
+alias v='xclip -selection clipboard -o'
 
 # ── Functions ─────────────────────────────────────────────────────────────────
 # View image inline (requires kitty)

@@ -10,23 +10,24 @@ Personal dotfiles for an Arch Linux system. All configs live under `configs/` (m
 
 ## Branches
 
-| Branch  | Purpose |
-|---------|---------|
-| `main`  | Arch Linux (primary) |
-| `macos` | macOS — shared configs adapted, no desktop WM layer |
+| Branch   | Purpose |
+|----------|---------|
+| `main`   | Arch Linux (primary) |
+| `macos`  | macOS — shared configs adapted, no desktop WM layer |
+| `ubuntu` | Ubuntu — no WM layer, apt packages, xclip clipboard |
 
-To sync a shared config change to macOS:
+To sync a shared config change to another branch:
 ```bash
-git checkout macos
+git checkout macos   # or ubuntu
 git checkout main -- configs/.zshrc   # or whichever file changed
-# adjust macOS-specific lines if needed, then commit
+# adjust platform-specific lines if needed, then commit
 ```
 
-> **IMPORTANT**: After any commit on `main` that touches a shared config (zshrc, tmux.conf, ghostty, collect.sh, etc.), always update `macos` too. Cherry-pick the relevant commits or apply the changes manually — do not leave the branches out of sync.
+> **IMPORTANT**: After any commit on `main` that touches a shared config (zshrc, tmux.conf, ghostty, collect.sh, etc.), always update `macos` and `ubuntu` too. Cherry-pick the relevant commits or apply the changes manually — do not leave the branches out of sync.
 
 ## Conventions
 
-- **Clipboard**: Arch/Wayland uses `wl-copy`/`wl-paste`; macOS branch uses `pbcopy`/`pbpaste` directly (no runtime conditionals — the branches diverge).
+- **Clipboard**: Arch/Wayland uses `wl-copy`/`wl-paste`; macOS uses `pbcopy`/`pbpaste`; Ubuntu uses `xclip -selection clipboard` — no runtime conditionals, branches diverge.
 - **Consistent theme**: Catppuccin Mocha across all tools (terminal, editor, prompt, browser).
 - **Rofi theme is static**: only the active theme (`launchers/type-4/style-5`, onedark colors) is tracked. `collect.sh` does not update rofi — edit the repo files directly if the theme changes.
 
@@ -35,15 +36,9 @@ git checkout main -- configs/.zshrc   # or whichever file changed
 | Config | Path in repo |
 |--------|-------------|
 | Zsh | `configs/.zshrc` |
-| Zsh profile (Hyprland autostart) | `configs/.zprofile` |
 | Tmux | `configs/.tmux.conf` |
 | Ghostty | `configs/.config/ghostty/config` |
 | oh-my-posh | `configs/.config/ohmyposh/` |
-| Hyprland WM | `configs/.config/hypr/hyprland.conf` |
-| Hyprlock | `configs/.config/hypr/hyprlock.conf` |
-| Hyprpaper | `configs/.config/hypr/hyprpaper.conf` |
-| Rofi (active theme only) | `configs/.config/rofi/` |
-| Waybar | `configs/.config/waybar/` |
 
 ## Architecture
 
@@ -51,8 +46,7 @@ git checkout main -- configs/.zshrc   # or whichever file changed
 - **Prompt**: oh-my-posh (catppuccin-mocha theme from `configs/.config/ohmyposh/`)
 - **Terminal**: Ghostty
 - **Multiplexer**: Tmux with `Ctrl+a` prefix, vi-mode copy, F1-F9 window switching
-- **WM**: Hyprland (Wayland) — Arch only
 
 ## Package Management
 
-System uses `pacman` + `yay` (AUR). See `scripts/install-dependencies.sh` for the package list.
+Ubuntu uses `apt`. See `scripts/install-dependencies.sh` for the package list.
