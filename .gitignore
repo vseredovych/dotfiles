@@ -1,1 +1,3 @@
 configs/.zshrc.work
+# Private VPN connection details (see configs/.config/nix-darwin/vpn.nix)
+configs/.config/work-vpn/

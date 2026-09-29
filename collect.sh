@@ -20,4 +20,7 @@ collect .zshrc
 collect .tmux.conf
 collect .config/ghostty
 collect .config/ohmyposh
+collect .config/nix-darwin/flake.nix
+collect .config/nix-darwin/flake.lock
+collect .config/nix-darwin/vpn.nix
 echo "Done. Review with: git diff configs/"
