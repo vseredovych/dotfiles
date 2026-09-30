@@ -5,9 +5,12 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    openconnect-sso.url = "github:vseredovych/openconnect-sso";
+    # Not following our nixpkgs: its own pin has Qt WebEngine in the binary cache
+    # (building Chromium from source takes hours).
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, openconnect-sso }:
   let
     configuration = { pkgs, ... }:
 
@@ -37,8 +40,17 @@
             "brave-browser"
             "raycast"
             "codex"
+            "neovide-app"
           ];
       };
+
+      # Open text/code files in Neovide from Finder (per-user LaunchServices, so run as the user)
+      system.activationScripts.postActivation.text = ''
+          for uti in public.plain-text public.source-code public.script public.shell-script \
+                     public.json public.yaml public.xml net.daringfireball.markdown; do
+              sudo -u outlawedchop ${pkgs.duti}/bin/duti -s com.neovide.neovide "$uti" all || true
+          done
+      '';
 
       launchd.user.agents.kmonad = {
           serviceConfig = {
@@ -134,6 +146,7 @@
 
           # macOS-specific
           blueutil
+          duti
 
         ];
 
@@ -164,7 +177,7 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#Viktors-MacBook-Pro
     darwinConfigurations."vsmac" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ./vpn.nix ];
+      modules = [ configuration ./vpn.nix openconnect-sso.darwinModules.default ];
     };
   };
 }

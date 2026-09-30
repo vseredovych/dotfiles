@@ -37,10 +37,45 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1790600678,
+        "narHash": "sha256-6k3n7X2UsZ6tAlWTz99RimiZab+17tMUrw9sRUcELiA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f45c6f04c2f013f004bf94e284e95d72898d9393",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "openconnect-sso": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1790749859,
+        "narHash": "sha256-cBaKgU1AhDfCyIipBxkiEUJAi//YrdKaFqxvoPYQdSU=",
+        "owner": "vseredovych",
+        "repo": "openconnect-sso",
+        "rev": "23c9a704e1d11865b515f204668730bf7ba85ef9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vseredovych",
+        "repo": "openconnect-sso",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "nix-darwin": "nix-darwin",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "openconnect-sso": "openconnect-sso"
       }
     }
   },
