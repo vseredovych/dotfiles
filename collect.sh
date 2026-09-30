@@ -23,4 +23,5 @@ collect .config/ohmyposh
 collect .config/nix-darwin/flake.nix
 collect .config/nix-darwin/flake.lock
 collect .config/nix-darwin/vpn.nix
+collect .config/work-vpn/config   # private, gitignored
 echo "Done. Review with: git diff configs/"
