@@ -50,7 +50,7 @@ git checkout main -- configs/.zshrc   # or whichever file changed
 - **Shell**: Zsh + Zinit plugin manager, with fzf-tab, zsh-autosuggestions, zsh-syntax-highlighting
 - **Prompt**: oh-my-posh (catppuccin-mocha theme from `configs/.config/ohmyposh/`)
 - **Terminal**: Ghostty
-- **Multiplexer**: Tmux with `Ctrl+a` prefix, vi-mode copy, F1-F9 window switching
+- **Multiplexer**: Tmux with `Ctrl+Space` prefix, `Ctrl+f` sessionizer popup, vi-mode copy, F1-F9 window switching
 - **WM**: Hyprland (Wayland) — Arch only
 
 ## Package Management

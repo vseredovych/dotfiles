@@ -100,18 +100,7 @@ iv() {
 eval "$(fzf --zsh)"
 
 # ── Keybinding overrides (after fzf to take precedence) ───────────────────────
-# Ctrl+F: sessionizer if buffer empty, else accept autosuggestion
-_ctrl_f() {
-  if [[ -z $BUFFER ]]; then
-    BUFFER="tmux-sessionizer"
-    zle accept-line
-  else
-    zle autosuggest-accept
-  fi
-}
-zle -N _ctrl_f
-bindkey '^f' _ctrl_f
-
+# Ctrl+F is the tmux sessionizer popup (see .tmux.conf); Ctrl+E / Right accept suggestions
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'ctrl-y:accept'"
 
 # z — frecency-based directory jumping
