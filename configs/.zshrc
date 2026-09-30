@@ -73,17 +73,22 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # ── Aliases ───────────────────────────────────────────────────────────────────
-alias ls='ls --color'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ls='eza -l'
+alias ll='eza -l'
+alias la='eza -l'
+alias l='eza'
+
 alias d='pwd'
 alias vim='nvim'
 alias pvim='poetry run nvim .'
+alias bwl='export BW_SESSION=$(bw unlock --raw)'
+
 
 alias c='pbcopy'
 alias cc='pbcopy'
 alias v='pbpaste'
+
+alias drs='sudo darwin-rebuild switch --flake ~/.config/nix-darwin'
 
 # ── Functions ─────────────────────────────────────────────────────────────────
 # View image inline (requires kitty)
@@ -120,6 +125,20 @@ z() {
     __zoxide_z "$@"
   fi
 }
+
+# ── Yazi ─────────────────────────────────────────────────────────────────────
+# # 1. Define a simple function to launch yazi
+yazi-launcher() {
+  yazi
+  zle reset-prompt
+}
+
+# 2. Register it as a widget
+zle -N yazi-launcher
+
+# 3. Bind to Ctrl+g (or your preferred key)
+bindkey '^g' yazi-launcher
+
 
 # ── Python ────────────────────────────────────────────────────────────────────
 export PYTHONDONTWRITEBYTECODE=1
